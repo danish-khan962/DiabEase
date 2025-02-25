@@ -671,3 +671,61 @@ html, body{
     font-weight: 500;
     text-align: center;
 }
+
+.mobileNav{
+    position: absolute;
+    top: 0;
+    background: #fff;
+    display: flex;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.893);
+}
+.mobileNav.open{
+    display: block;
+}
+.mobileNavUL{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 2rem;
+    align-items: center;
+    height: 100%;
+}
+.mobileNavLinks{
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.mobileNavLinks:hover{
+    font-size: 24px;
+    color: #066cfa;
+    transition: 500ms ease-in-out;
+}
+.mobileNav p{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 0rem 3rem;
+}
+.fa-x{
+    color: #fff;
+    position: relative;
+    top: 3rem;
+    right: 0;
+    font-size: 22px;
+    background-color: #0099ff;
+    padding: 1rem;
+    border-radius: 25%;
+}
+.fa-x:hover{
+    background-color: #0052D4;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}

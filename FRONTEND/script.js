@@ -58,6 +58,24 @@ BMIbutton.addEventListener("click", () => {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    const menuIcon = document.querySelector('.fa-bars');  
+    const mobileNav = document.querySelector('.mobileNav'); 
+    const closeIcon = document.querySelector('.fa-x');
+    const body = document.querySelector('body');
+    
+    menuIcon.addEventListener('click', function() {
+        mobileNav.classList.add('open'); 
+        body.style.overflow = 'hidden';
+    });
+
+   
+    closeIcon.addEventListener('click', function() {
+        mobileNav.classList.remove('open'); 
+        body.style.overflow = 'auto'
+    });
+});
+
 
 //Swiper JS
 const swiper = new Swiper('.swiper', {
