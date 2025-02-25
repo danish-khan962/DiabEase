@@ -1,0 +1,7 @@
+<!-- DIABETES DATASET , diabetes.csv -->
+
+https://drive.google.com/file/d/1tUPL2AHegvZs_Kvu-0YHSMPUT4cu-G7C/view
+
+
+**Note**
+Download the dataset from the given link , and paste the downloaded csv file into respected project repository

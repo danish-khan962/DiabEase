@@ -1,0 +1,83 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiabEase | Prediciton made easy..</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Big+Shoulders+Display:wght@100..900&family=Cairo:wght@200..1000&family=Epilogue:ital,wght@0,100..900;1,100..900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Gotu&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mukta:wght@200;300;400;500;600;700;800&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        html,body{
+            height: 100vh;
+            width: 100vw;
+        }
+        #wrapper{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: url(" {% static 'DiabetesPrediction\images\grid-motion.gif' %} ");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .container{
+            padding: 1.5rem;
+            max-width: 650px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #212121;
+            color: #fff;
+            padding: 2rem;
+            border: none;
+            border-radius: 8px;
+            gap: 2.5rem;
+        }
+        button{
+            background: #0189dd;
+            padding: 1rem 2.5rem;
+            border: none;
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+            border-radius: 8px;
+        }
+        button:hover{
+            background: #14a0f8;
+            transition: all 200ms ease;
+            cursor: pointer;
+        }
+        button i{
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrapper">
+        <div class="container">
+            <p>Welcome to the Diabetes Prediction page. Here, you can assess your risk of developing diabetes by providing some basic health information. This tool helps you understand potential risks and take informed steps toward better health.</p>
+
+        <form action="predict/">
+            <a href="./predict.html">
+                <button type="submit">Let's get started <i class="fa-solid fa-arrow-right"></i></button>
+            </a>
+        </form>
+        </div>
+    </div>
+</body>
+</html>

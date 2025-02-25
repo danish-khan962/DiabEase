@@ -1,0 +1,232 @@
+/*Importing font - Poppins*/
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*Importing font - Roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*Importing font - Kalam*/
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Kalam:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+html, body{
+    height: 100vh;
+    width: 100vw;
+}
+
+/*NAVIGATION BAR*/
+#navBar{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+    background: #000000;
+    color: #fff;
+    padding: 2rem 3rem;
+    width: 100vw;
+}
+#navBar picture{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+#navBar img{
+    height: 35px ;
+}
+#navBar .brandName{
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+}
+#navBar .breaker{
+    width: 50%;
+    height: 1px;
+    border: 2px solid slategray;
+}
+#navBar .homeLink{
+    color: #fff;
+    background-color: #029f49;
+    padding: 0.5rem 2rem;
+    border-radius: 20px;
+}
+#navBar .homeLink:hover{
+    text-decoration: underline;
+    background-color: #049445;
+    transition: all 200ms ease-in-out;
+}
+@media screen and (max-width: 750px){
+    #navBar{
+        flex-direction: column;
+    }
+    #navBar .breaker{
+        width: 100%;
+    }
+}
+
+/*PROFILE CARDS*/
+.wrapper{
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 2rem;
+    flex-direction: column;
+    gap: 3rem;
+}
+.wrapper .textarea{
+    width: 80%;
+    color: #fff;
+    text-align: center;
+}
+.wrapper .textarea h1{
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    font-size: 40px;
+}
+.wrapper .textarea h1 span{
+    font-weight: 600;
+}
+.wrapper .textarea .content{
+    font-family: 'Roboto',sans-serif;
+}
+.profileCards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(1,1fr);
+    gap: 2rem;
+}
+.profileCards .card{
+    max-width: 300px;
+    width: 100%;
+    background: linear-gradient(to right, #41295a,  #2F0743 );
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+}
+.profileCards .card img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-bottom-right-radius: 20%;
+    border-bottom-left-radius: 25%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.profileCards .card .name{
+    margin-top: 1rem;
+}
+.profileCards .card:hover{
+    transform: scale(1.05);
+    transition: all 200ms ease-in-out;
+    box-shadow: 1px 1px 16px #7303c0;
+    img{
+        transform: scale(1.06);
+        transition: all 200ms ease-out;
+    }
+}
+.profileCards .card .title{
+    margin-bottom: 1.5rem;
+}
+@media screen and (max-width:750px){
+    .profileCards{
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(3,1fr);
+    }
+}
+
+/*FOOTER*/
+#footBar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 7rem;
+    padding-bottom: 5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background: #000000;
+}
+#footBar .footLogo img{
+    height: 100px;
+}
+#footBar .ul1{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+#footBar .ul1 a li{
+    color: #fff;
+}
+#footBar .ul1 .links{
+    text-transform: uppercase;
+    font-size: 19px;
+    font-weight: 600;
+    color: #0099ff;
+    margin-bottom: 1.5rem;
+}
+#footBar .ul1 a li:hover{
+    text-decoration: underline;
+}
+#footBar .ul2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+#footBar .ul2 .socials{
+    color: #0099ff;
+    text-transform: uppercase;
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+#footBar .ul2 .socialBar{
+    display: flex;
+    gap: 2rem;
+}
+#footBar .ul2 .socialBar li a .fa-instagram{
+    color: #FF0099;
+    font-size: 24px;
+}
+#footBar .ul2 .socialBar li a .fa-x{
+    color: #E0EAFC;
+    font-size: 24px;
+}
+#footBar .ul2 .socialBar li a .fa-discord{
+    color: #5865F2;
+    font-size: 24px;
+}
+#footBar .ul2 .socialBar li a i:hover{
+    transform: scale(1.3);
+    transition: all 200ms ease-in-out;
+}
+@media screen and (max-width:650px){
+    #footBar{
+        flex-direction: column;
+        gap: 5rem;
+    }
+    #footBar .footLogo img{
+        height: 75px;
+    }
+    #footBar .ul2{
+        justify-content: start;
+        align-items: start;
+    }
+}
+
+
+/**Footer label banner*/
+.footerLabel{
+    padding: 2rem 0.5rem;
+    background: #212121;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+}

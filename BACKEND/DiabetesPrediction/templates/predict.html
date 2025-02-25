@@ -1,0 +1,189 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Predict with Diabetes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Big+Shoulders+Display:wght@100..900&family=Cairo:wght@200..1000&family=Epilogue:ital,wght@0,100..900;1,100..900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Gotu&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mukta:wght@200;300;400;500;600;700;800&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+            font-family: 'Roboto flex', sans-serif;
+        }
+        html, body{
+            height: 100vh;
+            width: 100vw;
+        }
+        .wrapper{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            padding: 0rem 1.5rem;
+        }
+        #predictForm{
+            max-width: 500px;
+            width: 100%;
+            background: linear-gradient(to right, #C9D6FF, #E2E2E2);           
+            padding: 1rem 2rem;
+            color: #000;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            box-shadow: 1px 1px 16px #17f096;
+            border-radius: 12px;
+            transition: 1s ease;
+        }
+        .rows{
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+        .bar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        label{
+            font-weight: 500;
+        }
+        .inp{
+            width: 100%;
+            font-size: 16.5px;
+            padding: 0.2rem 1.5em;
+            outline: none;
+            border: 1px solid #212121;
+            border-radius: 15px;
+        }
+        .error{
+            color: red;
+            display: none;
+        }
+        #btn{
+            padding: 0.5rem;
+            font-size: 18px;
+            border: none;
+            background: linear-gradient(to right, #005C97, #363795);
+            color: #fff;
+            font-weight: 600;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <form id="predictForm" action="/predict/result/">
+            {% csrf_token %}
+            <div class="rows">
+                <div class="bar">
+                    <label>Pregnancies</label>
+                    <p class="error">This field is required!</p>
+                </div>
+                <input type="text" class="inp" id="pregnancies" placeholder="Enter pregnancies..." name="id1">
+            </div>
+            <div class="rows">
+                <div class="bar">
+                    <label>Glucose</label>
+                    <p class="error">This field is required!</p>
+                </div>
+                <input type="text" class="inp" id="glucose" placeholder="Enter glucose..." name="id2">
+            </div>
+            <div class="rows">
+                <div class="bar">
+                    <label>Blood pressure</label>
+                    <p class="error">This field is required!</p>
+                </div>
+                <input type="text" class="inp" id="bloodPressure" placeholder="Enter blood pressure..." name="id3">
+            </div>
+            <div class="rows">
+                <div class="bar">
+                    <label>Skin thickness</label>
+                    <p class="error">This field is required!</p>
+                </div>
+                <input type="text" class="inp" id="skinThickness" placeholder="Enter skin thickness..." name="id4">
+            </div>
+            <div class="rows">
+                <div class="bar">
+                    <label>Insulin</label>
+                    <p class="error">This field is required!</p>
+                </div>
+                <input type="text" class="inp" id="insulin" placeholder="Enter Insulin..." name="id5">
+            </div>
+            <div class="rows">
+                <div class="bar">
+                    <label>BMI</label>
+                    <p class="error">This field is required!</p>
+                </div>
+                <input type="text" class="inp" id="bmi" placeholder="Enter BMI..." name="id6">
+            </div>
+            <div class="rows">
+                <div class="bar">
+                    <label>DiabetesPedigree Function</label>
+                    <p class="error">This field is required!</p>
+                </div>
+                <input type="text" class="inp" id="diabetesPedigree" placeholder="Enter DiabetesPedigree function..." name="id7">
+            </div>
+            <div class="rows">
+                <div class="bar">
+                    <label>Age</label>
+                    <p class="error">This field is required!</p>
+                </div>
+                <input type="text" class="inp" id="age" placeholder="Enter age..." name="id8">
+            </div>
+
+            <button id="btn" type="submit">Predict</button>
+        </form>
+
+        <div style="color: #fff; font-size: 35px">
+            {% if result2 %}
+                Result => {{ result2 }}
+            {% else %}
+                No prediction yet.
+            {% endif %}
+        </div>
+        
+    </div>
+
+    <!-- <script>
+        // Selecting the form and input elements
+        let form = document.querySelector('#predictForm');
+        let inputs = document.querySelectorAll('.inp');
+        let errors = document.querySelectorAll('.error');
+        let submitButton = document.querySelector('#btn');
+
+        // Form submit event listener
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent form submission for validation
+
+            let isValid = true;
+
+            // Loop through each input and validate
+            inputs.forEach((input, index) => {
+                if (input.value.trim() === '') {
+                    errors[index].style.display = 'block';  // Show error message
+                    isValid = false;
+                } else {
+                    errors[index].style.display = 'none';  // Hide error message
+                }
+            });
+
+            // If the form is valid, proceed with the prediction (simulation)
+            if (isValid) {
+                console.log("Form is valid. Proceeding with prediction...");
+                // You can add the prediction logic here
+            } else {
+                console.log("Please fill out all fields.");
+            }
+        });
+    </script> -->
+</body>
+</html>
