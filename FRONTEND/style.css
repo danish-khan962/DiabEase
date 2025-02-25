@@ -672,6 +672,8 @@ html, body{
     text-align: center;
 }
 
+
+/*Mobile Navigation Toggle*/
 .mobileNav{
     position: absolute;
     top: 0;
@@ -728,4 +730,110 @@ html, body{
     background-color: #0052D4;
     transition: all 200ms ease-in-out;
     cursor: pointer;
+}
+
+/*Contribution Card*/
+.contributionCard{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background: #fff;
+    background-color: rgba(0, 0, 0, 0.893);
+    display: none;
+}
+.contributionCard.open{
+    display: flex;
+}
+.fa-square-xmark{
+    font-size: 35px;
+}
+.C-card{
+    padding: 1.5rem;
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background: linear-gradient(to right, #ff0289, #ff26ac);
+    border-radius: 15px;
+    box-shadow: 2px 2px 100px #ff04f2;
+    transition: 1s ease-in-out;
+}
+.wrapBox{
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: center;
+}
+.wrapBox img{
+    object-fit: contain;
+    width: 50%;
+}
+.linkBar{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.handleLink{
+    background: #212121;
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+.handleLink .fa-github{
+    color: yellow;
+    font-size: 24px;
+}
+.handleLink .fa-instagram{
+    color: #00ff3c;
+    font-size: 24px;
+}
+.handleLink .fa-x{
+    color: #E0EAFC;
+    font-size: 24px;
+}
+.handleLink .fa-discord{
+    color: #071af3;
+    font-size: 24px;
+}
+.handleLink a{
+    color: #fff
+}
+.handleLink a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: all 200ms ease-in;
+}
+.C-card:hover{
+    transform: scale(1.05);
+}
+@media screen and (max-width: 630px){
+    .wrapBox{
+        flex-direction: column;
+    }
+    .linkBar{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen and (max-width: 485px){
+    .handleLink a{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 445px){
+    .handleLink{
+        gap: 0.8rem;
+    }
+    .handleLink a{
+        font-size: 11px;
+    }
 }

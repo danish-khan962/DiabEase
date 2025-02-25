@@ -77,6 +77,24 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+document.addEventListener('DOMContentLoaded', function () {
+    const contributeButton = document.querySelector('.contribute');
+    const contributionCard = document.querySelector('.contributionCard');
+    const cancelCard = document.querySelector('.fa-square-xmark');
+    const body = document.querySelector('body');
+
+    contributeButton.addEventListener('click', ()=>{
+        contributionCard.classList.add('open');
+        body.style.overflow = 'hidden';
+    });
+
+    cancelCard.addEventListener('click', ()=>{
+        contributionCard.classList.remove('open');
+        body.style.overflow = 'auto';
+    })
+})
+
+
 //Swiper JS
 const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
