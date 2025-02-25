@@ -61,7 +61,7 @@ BMIbutton.addEventListener("click", () => {
 document.addEventListener('DOMContentLoaded', function () {
     const menuIcon = document.querySelector('.fa-bars');  
     const mobileNav = document.querySelector('.mobileNav'); 
-    const closeIcon = document.querySelector('.fa-x');
+    const closeIcon = document.querySelector('#close-x');
     const body = document.querySelector('body');
     
     menuIcon.addEventListener('click', function() {
