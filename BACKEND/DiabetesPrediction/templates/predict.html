@@ -25,7 +25,7 @@
             height: 100vh;
             width: 100vw;
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
             background: #000;
             padding: 0rem 1.5rem;
@@ -76,6 +76,15 @@
             color: #fff;
             font-weight: 600;
             border-radius: 20px;
+            cursor: pointer;
+        }
+        #resultAREA{
+            padding: 3rem 7rem;
+            color: #000000;
+            font-size: 45px;
+            background: linear-gradient(to right, #a8ff78, #78ffd6);
+            border-radius: 15px;
+            box-shadow: 3px 3px 40px #099b5e;
         }
     </style>
 </head>
@@ -143,9 +152,9 @@
             <button id="btn" type="submit">Predict</button>
         </form>
 
-        <div style="color: #fff; font-size: 35px">
+        <div id="resultAREA"">
             {% if result2 %}
-                Result => {{ result2 }}
+                Result : {{ result2 }}
             {% else %}
                 No prediction yet.
             {% endif %}

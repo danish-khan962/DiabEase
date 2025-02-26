@@ -23,7 +23,7 @@ def result(request):
 
     if request.method == 'GET':  # Ensure data is being processed after form submission
         # Loading the dataset
-        diabetes_dataset = pd.read_csv(r'C:\Users\hp\DiabEase\DiabetesPrediction\assets\diabetes.csv')
+        diabetes_dataset = pd.read_csv(r'C:\Users\hp\DiabEase\BACKEND\DiabetesPrediction\assets\diabetes.csv')
         diabetes_df = pd.DataFrame(diabetes_dataset)
 
         # Separating data and labels
